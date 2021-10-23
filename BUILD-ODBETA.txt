@@ -1,0 +1,14 @@
+The GCW0 changes included here are borrowed from Denis N Kuznetsov https://github.com/denis-n-kuznetsov/gmu (thank you!)
+
+To build for od-beta change scripts 'configure-odbeta.sh' and 'makefile-odbeta.sh" to put your toolchain path then execute:
+
+./configure-odbeta.sh
+./make-odbeta.sh
+
+In my current toolchain these are the enabled decoders list:
+Opus enabled
+mpg123 enabled
+Vorbis enabled
+FLAC enabled
+Speex enabled
+ModPlug enabled

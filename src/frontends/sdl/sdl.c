@@ -163,7 +163,11 @@ static SDL_Surface *init_sdl(int with_joystick, int width, int height, int fulls
 		gmu_load_icon();
 		display = SDL_SetVideoMode(width, height, screen_max_depth,
 #ifndef SDLFE_NO_HWACCEL
+#ifndef OD_BETA
 								   SDL_HWSURFACE | SDL_HWACCEL |
+#else
+								   SDL_HWSURFACE |
+#endif
 #endif
 								   SDL_RESIZABLE | fullscreen);
 		if (display == NULL) {

@@ -164,6 +164,13 @@ default_distbin: $(DISTFILES)
 	$(Q)$(STRIP) $(projname)-$(TARGET)/$(BINARY)
 	$(Q)-$(STRIP) $(projname)-$(TARGET)/gmuc
 	$(Q)zip -r $(projname)-$(TARGET).zip $(projname)-$(TARGET)
+ifeq ($(TARGET),gcw0)
+	@echo -e "Creating \033[1m$(projname)-$(TARGET).opk\033[0m"
+	$(Q)-rm -f $(projname)-$(TARGET).opk
+	$(Q)-cp gmuc $(projname)-$(TARGET)
+	$(Q)-$(STRIP) $(projname)-$(TARGET)/gmuc
+	$(Q)mksquashfs $(projname)-$(TARGET) $(projname)-$(TARGET).opk -all-root -noappend -no-exports -no-xattrs
+endif
 	$(Q)-rm -rf $(projname)-$(TARGET)
 
 install: $(DISTFILES)
@@ -195,6 +202,9 @@ install: $(DISTFILES)
 clean:
 	$(Q)-rm -rf *.o $(BINARY) gmuc decoders/*.so decoders/*.o frontends/*.so frontends/*.o
 	$(Q)-rm -f $(TEMP_HEADER_FILES)
+ifeq ($(TARGET),gcw0)
+	$(Q)-rm -f $(projname)-*.opk
+endif
 	@echo "\033[1mAll clean.\033[0m"
 
 gmuc: gmuc.o window.o listwidget.o websocket.o base64.o debug.o ringbuffer.o net.o json.o dir.o wejconfig.o ui.o charset.o nethelper.o util.o
