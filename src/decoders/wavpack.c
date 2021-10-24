@@ -16,7 +16,11 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#ifdef OD_BETA
+#include <wavpack.h>
+#else
 #include <wavpack/wavpack.h>
+#endif
 #include "../gmudecoder.h"
 #include "../trackinfo.h"
 #include "../util.h"
