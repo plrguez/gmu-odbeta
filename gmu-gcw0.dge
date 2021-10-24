@@ -15,14 +15,27 @@ cd "$BASEDIR"
 
 mkdir -p "$GMU_CFG_PATH"
 
+BASE_CFG=gmu.gcw0.conf
+device=`hostname`
+
+case "$device" in
+        rg*)
+            BASE_CFG=gmu.rg350.conf
+            ;;
+
+        *)
+            BASE_CFG=gmu.gcw0.conf
+            ;;
+esac
+
 [ ! -f "$GMU_CFG" ] && {
-	cp gmu.gcw0.conf "$GMU_CFG"
+	cp "$BASE_CFG" "$GMU_CFG"
 	touch "$VERSION"
 }
 
 [ ! -f "$VERSION" ] && {
 	mv "$GMU_CFG" "$GMU_CFG".bak
-	cp gmu.gcw0.conf "$GMU_CFG"
+	cp "$BASE_CFG" "$GMU_CFG"
 	touch "$VERSION"
 }
 
