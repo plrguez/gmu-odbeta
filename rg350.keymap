@@ -20,8 +20,8 @@ PreviousTrack=L2
 NextTrack=R2
 SeekForward=Mod+R2
 SeekBackward=Mod+L2
-Lock=Select
-Unlock=Select+R2
+Lock=Mod+Select
+Unlock=Mod+Select
 Exit=Mod+Start
 Help=Mod+Up
 
