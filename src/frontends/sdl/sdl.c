@@ -140,6 +140,10 @@ static SDL_Surface *init_sdl(int with_joystick, int width, int height, int fulls
 			screen_max_width  = video_info->current_w;
 			screen_max_height = video_info->current_h;
 			screen_max_depth  = video_info->vfmt->BitsPerPixel;
+#ifdef OD_BETA
+                        if (screen_max_width == 320 && screen_max_height == 480)
+                            screen_max_height = 240;
+#endif
 			wdprintf(V_INFO, "sdl_frontend", "Available screen real estate: %d x %d pixels @ %d bpp\n",
 					 screen_max_width, screen_max_height, screen_max_depth);
 		} else {
