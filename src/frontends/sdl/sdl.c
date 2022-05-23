@@ -1280,7 +1280,11 @@ static void *start_player(void *arg)
 	cfg_add_key_if_not_present(config, "SDL.LyricsFilePattern", "$.txt;*.txt");
 	cfg_add_key_if_not_present(config, "SDL.AutoSelectCurrentPlaylistItem", "no");
 	cfg_key_add_presets(config, "SDL.AutoSelectCurrentPlaylistItem", "yes", "no", NULL);
-	cfg_add_key_if_not_present(config, "SDL.DefaultSkin", "default-modern");
+	if (screen_max_width >= 640) {
+		cfg_add_key_if_not_present(config, "SDL.DefaultSkin", "default-modern-large");
+    } else {
+		cfg_add_key_if_not_present(config, "SDL.DefaultSkin", "default-modern");
+    }
 	cfg_add_key_if_not_present(config, "SDL.Scroll", "always");
 	cfg_key_add_presets(config, "SDL.Scroll", "always", "auto", "never", NULL);
 	cfg_add_key_if_not_present(config, "SDL.BacklightPowerOnOnTrackChange", "no");
