@@ -337,10 +337,59 @@ A            - Show/hide cover artwork
 B            - Show/hide text
 ```
 
+
+## 3.4 OpenDingux (current Beta)
+
+The default button mapping is as follows:
+
+### Modifier
+Default Modifier is assigned to `L1` button
+
+### Global
+
+```
+R2           - Skip to next track in playlist/Start playback
+L2           - Skip to previous track in playlist
+Mod+R2       - Seek 10 seconds forward (**)
+Mod+L2       - Seek 10 seconds backward (**)
+X            - Pause/resume playback
+Mod+X        - Stop playback
+Mod+START    - Exit player
+Mod+SELECT   - Lock/Unlock buttons amd screen off/on
+START        - Toggle file browser/playlist view/track info
+LEFT/RIGHT   - Increase/lower volume
+Mod+A        - Program info
+Mod+LEFT     - Toggle time elapsed/remaining
+```
+
+### File browser
+
+```
+A            - Play file without adding it to the playlist
+B            - Add selected file to the playlist/Change directory
+Y            - Add selected directory and all sub directories
+Mod+B        - Insert selected file after selected playlist item
+```
+
+### Playlist
+
+```
+A            - Change play mode (continue, repeat all, 
+               repeat track, random, random+repeat)
+B            - Play selected track
+Y            - Remove selected track
+Mod+Y        - Clear playlist
+Mod+RIGHT    - Enqueue selected item
+
+Track info viewer:
+A            - Show/hide cover artwork
+B            - Show/hide text
+```
+
 (**) Seeking does not work with all file formats.
 
 
-## 3.4 Custom key mappings
+## 3.5 Custom key mappings
 
 You can customize Gmu's key mappings if you don't like the defaults. 
 To do that open the .keymap file in a text editor or copy it to a

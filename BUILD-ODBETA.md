@@ -110,7 +110,7 @@ Configure gmu to create the specific `config.mk` for our device.
 
 Now we build for this configuration:
 
-    make STRIP=mipsel-gcw0-linux-uclibc-strip DISTFILES="gmu.bin frontends decoders themes gmu.png README.txt libs.gcw0 COPYING gmu.bmp htdocs gmu-gcw0.dge gmuinput.gcw0.conf default.gcw0.desktop gmu.rg350.conf gmuinput.rg350.conf rg350.keymap" -j`nproc` distbin
+    make STRIP=mipsel-gcw0-linux-uclibc-strip DISTFILES="gmu.bin frontends decoders themes gmu.png README.txt libs.gcw0 COPYING gmu.bmp htdocs gmu-gcw0.dge gmuinput.gcw0.conf default.gcw0.desktop gmu.rg350.conf gmu.rg350m.conf gmuinput.rg350.conf rg350.keymap" -j`nproc` distbin
 
 >- Strip program to use is selected passing `STRIP` variable to the make command.
 >- The distfiles to include in the opk file to be generated is passed in `DISTFILES` variable.
