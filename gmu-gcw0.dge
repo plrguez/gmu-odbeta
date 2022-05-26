@@ -19,6 +19,10 @@ BASE_CFG=gmu.gcw0.conf
 device=`hostname`
 
 case "$device" in
+        rg350m*)
+            BASE_CFG=gmu.rg350m.conf
+            ;;
+
         rg*)
             BASE_CFG=gmu.rg350.conf
             ;;
